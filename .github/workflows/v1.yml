@@ -3,9 +3,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "v1" ]
+    branches: [ "mybranch" ]
   pull_request:
-    branches: [ "v1" ]      
+    branches: [ "mybranch" ]      
 
 jobs:
   build-and-deploy:
