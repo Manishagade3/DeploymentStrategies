@@ -16,7 +16,7 @@ spec:
         - name: v1
           image: 333920746455.dkr.ecr.us-east-1.amazonaws.com/dpstrategy:v1
           ports:
-            - containerPort: 80 # Port your application listens on
+            - containerPort: 80 # Port your application listens 
       strategy:
         type: RollingUpdate # Use rolling update strategy
         rollingUpdate:
