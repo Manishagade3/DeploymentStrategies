@@ -59,7 +59,7 @@ jobs:
 
       - name: Deploy to EKS
         run: |
-          kubectl apply -f ./deplyment-strategy/blue-green/blue-deployment.yaml 
+          kubectl apply -f ./deplyment-strategy/blue-green/green-deployment.yaml 
           kubectl apply -f ./deplyment-strategy/blue-green/service.yaml
           kubectl get svc     
 
