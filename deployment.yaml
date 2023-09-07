@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 3 # Number of desired repli
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: v1
+          image: 333920746455.dkr.ecr.us-east-1.amazonaws.com/dpstrategy:v2
+          ports:
+            - containerPort: 80 # Port your application listens 
+      strategy:
+        type: RollingUpdate # Use rolling update strategy
+        rollingUpdate:
+          maxUnavailable: 1 # Number of pods unavailable during update
+          maxSurge: 1 # Number of additional pods allowed during update
+          
+---   
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer # Use LoadBalancer to expose the service ext
