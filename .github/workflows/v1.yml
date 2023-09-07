@@ -59,9 +59,8 @@ jobs:
 
       - name: Deploy to EKS
         run: |
-          kubectl apply -f 1-deployment.yaml 
-          kubectl apply -f service.yaml
+          kubectl apply -f ../deplyment-strategy/rolloingupdate/1-deployment.yaml 
+          kubectl apply -f ../deplyment-strategy/rolloingupdate/service.yaml
           kubectl get svc     
-
 
      
