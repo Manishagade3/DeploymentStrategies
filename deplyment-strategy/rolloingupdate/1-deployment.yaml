@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: 333920746455.dkr.ecr.us-east-1.amazonaws.com/dpstrategy:1
+          image: 333920746455.dkr.ecr.us-east-1.amazonaws.com/dpstrategy:v1
           ports:
             - name: http
               containerPort: 80
